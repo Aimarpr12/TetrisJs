@@ -1,0 +1,110 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%);
+}
+
+.tetris-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(10, 20px); /* Cambiado a 20px */
+    grid-template-rows: repeat(20, 20px); /* Cambiado a 20px */
+    gap: 1px;
+    background-color: #333;
+    padding: 10px;
+    border: 4px solid #555;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: relative;  /* Asegura que el contenedor se posicione de manera relativa */
+    z-index: 1;  /* Por defecto la cuadrícula */
+}
+
+.grid div {
+    width: 20px;  /* Cambiado a 20px */
+    height: 20px; /* Cambiado a 20px */
+    background-color: #111;
+    border: 1px solid #222;
+    background-color: transparent;  /* Temporalmente para ver si las piezas se dibujan detrás */
+    border: 1px solid #fff;
+}
+
+.score-display {
+    margin-left: 20px;
+    text-align: center;
+    color: #fff;
+}
+
+h1 {
+    font-size: 1.5rem; /* Ajustado el tamaño del título */
+    color: #fff;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+#score, #level {
+    font-size: 1.2rem; /* Ajustado para mantener proporcionalidad */
+    font-weight: bold;
+}
+
+button {
+    margin-top: 20px;
+    padding: 8px 16px;
+    background-color: #ff5722;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+button:hover {
+    background-color: #e64a19;
+}
+
+
+.tetromino {
+    position: relative;  /* Para que las piezas puedan posicionarse */
+    z-index: 2;  /* Asegura que las piezas se dibujen sobre la cuadrícula */
+    opacity: 1; 
+}
+
+.taken {
+    position: relative;  /* Para que las piezas puedan posicionarse */
+    z-index: 2;  /* Asegura que las piezas se dibujen sobre la cuadrícula */
+    opacity: 1; 
+}
+
+/* Contenedor para la siguiente ficha */
+.next-tetromino-container {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.next-tetromino-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 20px);  /* Tamaño de 4x4 para mostrar la próxima ficha */
+    grid-template-rows: repeat(4, 20px);
+    gap: 1px;
+    margin-top: 10px;
+}
+
+.next-tetromino-grid div {
+    width: 20px;
+    height: 20px;
+    background-color: #111;  /* Fondo oscuro */
+    border: 1px solid #222;  /* Bordes para las celdas */
+}

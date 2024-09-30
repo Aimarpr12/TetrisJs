@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tetris</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <div class="tetris-container">
+        <div class="grid"></div>
+        <div class="score-display">
+            <h1>Tetris</h1>
+            <p>Puntuación: <span id="score">0</span></p>
+            <p>Nivel: <span id="level">1</span></p>
+            <button id="start-button">Iniciar Juego</button>
+            <div class="next-tetromino-container"></div>
+                <h2>Siguiente ficha</h2>
+                <div class="next-tetromino-grid"></div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script>
+        moment.updateLocale('es', {
+            months: 'enero_febrero_marzo_abril_mayo_junio_julio_agosto_septiembre_octubre_noviembre_diciembre'.split('_'),
+            weekdays: 'domingo_lunes_martes_miércoles_jueves_viernes_sábado'.split('_'),
+            // Configuraciones adicionales
+        });
+    </script>
+    <script src="scripts/script.js" type="module"></script>
+</body>
+</html>
